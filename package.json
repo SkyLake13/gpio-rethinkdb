@@ -1,0 +1,28 @@
+{
+  "name": "gpio-rethinkdb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SkyLake13/gpio-rethinkdb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SkyLake13/gpio-rethinkdb/issues"
+  },
+  "homepage": "https://github.com/SkyLake13/gpio-rethinkdb#readme",
+  "dependencies": {
+    "rethinkdb-ts": "^2.4.0-rc.11"
+  },
+  "devDependencies": {
+    "@types/node": "^10.3.3",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.8.0",
+    "typescript": "^3.1.6"
+  }
+}
