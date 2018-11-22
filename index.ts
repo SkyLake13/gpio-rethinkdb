@@ -4,7 +4,7 @@ import monitorSwitches from './src/job';
 import Switch from "./src/switch";
 
 const tableName = 'switches';
-const interval = 1000;
+const interval = 5000;
 const switches = [
     new Switch('TV', 'tv', 0, 0),
     new Switch('Speaker', 'speaker', 0, 0)
@@ -20,17 +20,19 @@ const connection = async() => {
 
 
 const main = async() => {
+    let i = 0;
     const conn = await connection();
     await initDb(conn, switches);
     
     setInterval(async() => {
         await monitorSwitches(conn, tableName, interval);
-        console.log('job started');
+        i = i + 1;
+        console.log('job iteration ', i);
     }, interval);
 }
 
 main().then(() => {
-    console.log('function f called');
+    console.log('job is started');
 });
 
 

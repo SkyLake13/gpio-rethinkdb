@@ -1,8 +1,12 @@
 import { Connection, r } from "rethinkdb-ts";
 
 const initDb = async(connection: Connection, switches: any[]) => {
-    const db = await r.dbCreate('test').run(connection);
-    
+    const dbs = await r.dbList().run(connection);
+
+    if(!dbs.find(x => x === 'test')) {
+        await r.dbCreate('test').run(connection);
+    }
+
     const tables = await r.db('test').tableList().run(connection);
 
     if(tables.length === 0) {
